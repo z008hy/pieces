@@ -47,6 +47,60 @@ data: [
 ```
 666
 
+#### 表格单元写法
+
+```js
+import vue from 'vue'
+export default {
+  functional: true,
+  props: {
+    row: Object,
+    render: Function,
+    index: Number,
+    head: {
+      type: Object,
+      default: null
+    }
+  },
+  render: (h, ctx) => {
+    return ctx.props.render(
+      h,
+      { 
+        index: ctx.props.index,
+        row: ctx.props.row,
+        column: ctx.props.head 
+      }
+    )
+  }
+}
+```
+
+666
+
+#### createElement用法
+
+```js
+createElement(
+  // {String | Object | Function}
+  // 一个 HTML 标签字符串，组件选项对象，或者一个返回值
+  // 类型为 String/Object 的函数，必要参数
+  'div',
+  // 属性
+  {
+    // class: class 
+    // style: style
+    // attrs: HTML 
+    // props:props
+    // on: 事件
+  },
+  // {String | Array}
+  // 子节点 (VNodes)或使用字符串来生成“文本节点”
+  []
+)
+```
+
+666
+
 #### vue的render
 
 render函数的使用相比传统的template模板写法相对灵活，但是可读性并不如template模板写法。为此可以使用jsx写法来写更加复杂的自定义渲染。
