@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>d3</title>
+    <style>
+        .block{
+            display: block;
+            margin: 28px 0;
+        }
+
+        .axis path,
+        .axis line{
+            fill: none;
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
+    </style>
+</head>
+<body style="text-align: center;padding-bottom: 66px;">
+    <!--基础柱状图-->
+    <div id="columnChart" class="block"></div>
+    <!--布局饼图-->
+    <div id="pieChart" class="block"></div>
+    <!--力导向图-->
+    <div id="forceChart" class="block"></div>
+</body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="./hello.js"></script>
+</html>
